@@ -1,9 +1,0 @@
-name: mss_hospital_crud
-
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-
-  workflow_dispatch:
