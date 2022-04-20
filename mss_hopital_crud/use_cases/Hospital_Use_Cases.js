@@ -2,7 +2,7 @@ class Hospital_Use_Cases {
     hospital_Repository
 
     constructor(hospital_Repository) {
-    this.hospital_Repository = hospital_Repository
+        this.hospital_Repository = hospital_Repository
     }
     add_Hospital(hospital) {
         this.hospital_Repository.add_Hospital(hospital)

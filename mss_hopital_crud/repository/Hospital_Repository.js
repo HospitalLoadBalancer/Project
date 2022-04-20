@@ -1,7 +1,8 @@
-const {Hospital} = require('../models/Hospital.js')
+const { Hospital } = require('../models/Hospital.js')
 
 class Hospital_Repository {
-    hospitals
+    // Explicit attributes
+    hospitals       // List of registered hospitals
     
     constructor() {
         this.hospitals = []
@@ -12,6 +13,9 @@ class Hospital_Repository {
     }
     get_All_Hospitals() {
         return this.hospitals
+    }
+    get_All_Hospitals_Json(){
+        // Implementar
     }
     get_Hospital_By_Id(id) {
         return this.hospitals.find(hospital => hospital.id === id)

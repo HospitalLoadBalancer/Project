@@ -1,12 +1,12 @@
 const express = require('express')
-const { Hospital_Repository } = require('./repository/Hospital_Repository.js')
-const { Hospital_Controller } = require('./controllers/Hospital_Controller.js')
+// const { Hospital_Repository } = require('./repository/Hospital_Repository.js')
+// const { Hospital_Controller } = require('./controllers/Hospital_Controller.js')
 
 const app = express()
 app.use(express.json())
 
-const repository = new Hospital_Repository()
-const controller = new Hospital_Controller(repository)
+// const repository = new Hospital_Repository()
+// const controller = new Hospital_Controller(repository)
 
 //http://localhost:XXXX/add_Hospital
 /*

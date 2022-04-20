@@ -1,6 +1,5 @@
 const { Hospital_Use_Cases } = require("../use_cases/Hospital_Use_Cases")
-const {Hospital} = require('../models/Hospital.js')
-
+const { Hospital } = require('../models/Hospital.js')
 
 class Hospital_Controller {
     Hospital_Use_Cases
