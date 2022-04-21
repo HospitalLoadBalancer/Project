@@ -2,16 +2,16 @@ const { Hospital_Use_Cases } = require("../use_cases/Hospital_Use_Cases")
 const { Hospital } = require('../models/Hospital.js')
 
 class Hospital_Controller {
-    Hospital_Use_Cases
+    hospital_Use_Cases
 
     constructor(hospital_repository) {
-        this.Hospital_Use_Cases = new Hospital_Use_Cases(hospital_repository);
+        this.hospital_Use_Cases = new Hospital_Use_Cases(hospital_repository);
     }
 
     add_Hospital(req) {
         try {
             let hospital = new Hospital(req.body)
-            this.Hospital_Use_Cases.add_Hospital(hospital);
+            this.hospital_Use_Cases.add_Hospital(hospital);
             return {
                 status: 201,
                 message: "Hospital added successfully"
@@ -27,7 +27,7 @@ class Hospital_Controller {
 
     get_All_Hospitals() {
         try {
-            let res = this.Hospital_Use_Cases.get_All_Hospitals()
+            let res = this.hospital_Use_Cases.get_All_Hospitals()
             return {
                 status: 200,
                 message: res
@@ -44,7 +44,7 @@ class Hospital_Controller {
     get_Hospital_By_Id(req) {
         try {
             let id = req.query.id
-            let res = this.Hospital_Use_Cases.get_Hospital_By_Id(id);
+            let res = this.hospital_Use_Cases.get_Hospital_By_Id(id);
             return {
                 status: 200,
                 message: res
@@ -60,7 +60,7 @@ class Hospital_Controller {
     update_Hospital(req) {
         try {
             let hospital = new Hospital(req.body);
-            this.Hospital_Use_Cases.update_Hospital(hospital);
+            this.hospital_Use_Cases.update_Hospital(hospital);
             return {
                 status: 200,
                 message: "Hospital updated successfully"
@@ -76,7 +76,7 @@ class Hospital_Controller {
     delete_Hospital_By_Id(req) {
         try {
             let id = req.query.id
-            this.Hospital_Use_Cases.delete_Hospital_By_Id(id);
+            this.hospital_Use_Cases.delete_Hospital_By_Id(id);
             return {
                 status: 201,
                 message: "Hospital deleted successfully"

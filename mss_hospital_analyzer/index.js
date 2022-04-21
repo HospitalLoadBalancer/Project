@@ -1,17 +1,19 @@
 const express = require('express')
-// Require modules
+const { Fetcher } = require('./fetcher/Fetcher.js')
+const { Analyser_Controller } = require('./controllers/Analyser_Controller')
 
 const app = express()
 app.use(express.json())
 
 // Create variables
-
+const fetcher = new Fetcher(`http://localhost:4000`)
+const controller = new Analyser_Controller(fetcher)
 
 // Endpoints
 
 //http://localhost:XXXX/get_Emptiest_Hospital
 app.get('/get_Emptiest_Hospital', (req, res) => {
-    let result = controller.get_Emptiest_Hospital(req)
+    let result = controller.get_Emptiest_Hospital()
     res.status(result.status).send(result.message)
 })
 
