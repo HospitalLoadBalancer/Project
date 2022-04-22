@@ -1,1 +1,50 @@
+name: Docker Image CI
 
+on:
+  push:
+  pull_request:
+
+  workflow_dispatch:
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Build the Docker image
+      run: docker build -t js-docker .
+
+    - name: Run Container
+      run: docker run --name teste -d -p 4000:4000 js-docker
+
+    - name: Get container running
+      run: docker ps
+      
+    - name: Sleep
+      run: sleep 5s
+      
+    - run: curl localhost:4000
+      
+    - name: Get container logs
+      run: docker logs teste  
+      
+    - run: curl localhost:4000
+      
+    - name: Check HTTP status /
+      id: code
+      run: echo "::set-output name=status::$(curl -o /dev/null -s -w "%{http_code}\n" localhost:4000/get_All_Hospitals)"
+    - uses: nick-invision/assert-action@v1
+      with:
+        expected: 200
+        actual:  ${{ steps.code.outputs.status }}
+
+    - name: Check HTTP status of /erro
+      id: code1
+      run: echo "::set-output name=status::$(curl -o /dev/null -s -w "%{http_code}\n" localhost:4000/)"
+    - uses: nick-invision/assert-action@v1
+      with:
+        expected: 404
+        actual:  ${{ steps.code1.outputs.status }}
