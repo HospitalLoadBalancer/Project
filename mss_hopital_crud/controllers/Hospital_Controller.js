@@ -11,6 +11,7 @@ class Hospital_Controller {
     add_Hospital(req) {
         try {
             let hospital = new Hospital(req.body)
+            hospital.checkHospitalProperties()
             this.hospital_Use_Cases.add_Hospital(hospital);
             return {
                 status: 201,

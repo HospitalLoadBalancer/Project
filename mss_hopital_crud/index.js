@@ -51,13 +51,13 @@ app.get('/get_Hospital_By_Id', (req, res) => {
  */
 app.post('/update_Hospital', (req, res) => {
     let result = controller.update_Hospital(req)
-    res.status(result.status).json(result.message)
+    res.status(result.status).send(result.message)
 })
 
 //http://localhost:XXXX/delete_Hospital_By_Id?id=X
 app.post('/delete_Hospital_By_Id', (req, res) => {
     let result = controller.delete_Hospital_By_Id(req)
-    res.status(result.status).json(result.message)
+    res.status(result.status).send(result.message)
 })
 
 
