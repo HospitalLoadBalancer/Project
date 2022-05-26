@@ -13,8 +13,7 @@ const controller = new Hospital_Controller(repository)
 {
     "id":"2100", 
     "name":"teste",
-    "latitude":"-23.4601606",
-    "longitude": "-46.612616",
+    "location":{ "lat":"-23.4601606", "lng": "-46.612616"},
     "address": "Cu do mundo",
     "number_of_beds": "20",
     "ocupation" : "19"
@@ -40,10 +39,9 @@ app.get('/get_Hospital_By_Id', (req, res) => {
 //http://localhost:XXXX/update_Hospital
 /*
 {
-    "id":"12", 
-    "name":"updated",
-    "latitude":"-23.4601606",
-    "longitude": "-46.612616",
+    "id":"2100", 
+    "name":"teste",
+    "location":{ "lat":"-23.4601606", "lng": "-46.612616"},
     "address": "Cu do mundo",
     "number_of_beds": "20",
     "ocupation" : "19"
