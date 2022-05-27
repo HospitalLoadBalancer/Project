@@ -5,7 +5,7 @@ class Hospital{
     location = {lat:undefined, lng:undefined}         // Hospital location
     address                                           // Hospital address
     number_of_beds                                    // Hospital's total number of beds
-    ocupation                                         // Hospital's number of busy beds
+    occupation                                         // Hospital's number of busy beds
 
     constructor(obj){
         Object.assign(this, obj)
@@ -28,7 +28,7 @@ class Hospital{
             location: this.location,
             address: this.address,
             number_of_beds: this.number_of_beds,
-            ocupation: this.ocupation
+            occupation: this.occupation
         }
     }
 }

@@ -16,7 +16,7 @@ const controller = new Hospital_Controller(repository)
     "location":{ "lat":"-23.4601606", "lng": "-46.612616"},
     "address": "Cu do mundo",
     "number_of_beds": "20",
-    "ocupation" : "19"
+    "occupation" : "19"
  }
 */
 app.post('/add_Hospital', (req, res) => {
@@ -44,7 +44,7 @@ app.get('/get_Hospital_By_Id', (req, res) => {
     "location":{ "lat":"-23.4601606", "lng": "-46.612616"},
     "address": "Cu do mundo",
     "number_of_beds": "20",
-    "ocupation" : "19"
+    "occupation" : "19"
  }
  */
 app.post('/update_Hospital', (req, res) => {
