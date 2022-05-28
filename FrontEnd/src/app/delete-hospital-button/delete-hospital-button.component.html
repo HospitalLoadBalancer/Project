@@ -1,0 +1,23 @@
+<mat-expansion-panel hideToggle>
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+            Delete Hospital
+        </mat-panel-title>
+        <mat-panel-description>
+            Detete hospital in registry
+            <mat-icon>delete</mat-icon>
+        </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <form (ngSubmit)="onSubmit(hospitalForm)" #hospitalForm="ngForm">
+
+        <mat-form-field appearance="fill">
+            <mat-label>Id</mat-label>
+            <input matInput type="number" ngModel name="id" required>
+        </mat-form-field>
+
+        <mat-action-row>
+            <button mat-raised-button color="primary" type="submit">Submit</button>
+        </mat-action-row>
+    </form>
+</mat-expansion-panel>
