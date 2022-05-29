@@ -1,8 +1,15 @@
 .example-container {
     height: 400px;
     overflow: auto;
-    margin: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
   }
+.container{
+  width: auto;
+}
+mat-form-field.mat-form-field{
+    margin-left: 10px;
+}
   
   table {
     width: 100%;
