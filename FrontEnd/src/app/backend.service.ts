@@ -30,7 +30,7 @@ export class BackendService {
   }
 
   get_Hospital_By_Id(id:string){
-    console.log(this.get_All_HospitalsURL+id)
-    return this.http.get<Hospital>(this.get_All_HospitalsURL+id)
+    console.log(this.get_Hospital_By_IdURL+id)
+    return this.http.get<Hospital>(this.get_Hospital_By_IdURL+id)
   }
 }

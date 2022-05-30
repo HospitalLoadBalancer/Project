@@ -1,12 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
-import { BackendService } from '../backend.service';
+import { BackendService, Hospital } from '../backend.service';
 import { GetHospitalButtonDialogComponent } from './get-hospital-button-dialog/get-hospital-button-dialog.component';
-
-export interface HospitalData{
-  id:string
-}
 
 @Component({
   selector: 'get-hospital-button',
@@ -18,13 +14,13 @@ export class GetHospitalButtonComponent implements OnInit {
 
   onSubmit(form: NgForm): void {
     if (form.invalid) return
-    this.dialog.open(GetHospitalButtonDialogComponent, {
-      data:{
-        id: form.value.id
-      }
-    });
-    form.resetForm()
-    form.reset()
+    this.backEnd.get_Hospital_By_Id(form.value.id).subscribe((data: Hospital) => {
+      this.dialog.open(GetHospitalButtonDialogComponent, {
+        data: {...data}
+      });
+      form.resetForm()
+      form.reset()
+    })
   }
 
   ngOnInit(): void {
