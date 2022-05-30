@@ -1,9 +1,10 @@
 const express = require('express')
+const cors = require('cors')
 const { Hospital_Repository } = require('./repository/Hospital_Repository.js')
 const { Hospital_Controller } = require('./controllers/Hospital_Controller.js')
 
 const app = express()
-app.use(express.json())
+app.use(express.json(), cors())
 
 const repository = new Hospital_Repository()
 const controller = new Hospital_Controller(repository)
