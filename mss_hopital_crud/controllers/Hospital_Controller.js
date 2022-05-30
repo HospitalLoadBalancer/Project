@@ -79,7 +79,7 @@ class Hospital_Controller {
             let id = req.query.id
             this.hospital_Use_Cases.delete_Hospital_By_Id(id);
             return {
-                status: 201,
+                status: 202,
                 message: "Hospital deleted successfully"
             }
         }

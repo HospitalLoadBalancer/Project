@@ -22,6 +22,7 @@ export class BackendService {
   localHost = 'http://localhost:4000/'
   get_All_HospitalsURL = this.localHost+'get_All_Hospitals'
   get_Hospital_By_IdURL = this.localHost+'get_Hospital_By_Id?id='
+  delete_Hospital_By_IdURL = this.localHost+'delete_Hospital_By_Id?id='
 
   constructor(private http: HttpClient) { }
 
@@ -30,7 +31,10 @@ export class BackendService {
   }
 
   get_Hospital_By_Id(id:string){
-    console.log(this.get_Hospital_By_IdURL+id)
     return this.http.get<Hospital>(this.get_Hospital_By_IdURL+id)
+  }
+
+  delete_Hospital_By_Id(id:string){
+    return this.http.delete(this.delete_Hospital_By_IdURL+id)
   }
 }

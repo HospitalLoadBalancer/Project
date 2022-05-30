@@ -24,8 +24,7 @@ export class HospitalTableComponent{
 
   ngAfterViewInit() {
     this.backEnd.get_All_Hospitals().subscribe((data: Hospital[]) => {
-        this.hospitals = data 
-        this.dataSource = new MatTableDataSource(this.hospitals);
+        this.dataSource = new MatTableDataSource(data);
         this.dataSource.sort = this.sort;
     }) 
   }

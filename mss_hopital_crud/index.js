@@ -54,7 +54,7 @@ app.post('/update_Hospital', (req, res) => {
 })
 
 //http://localhost:XXXX/delete_Hospital_By_Id?id=X
-app.post('/delete_Hospital_By_Id', (req, res) => {
+app.delete('/delete_Hospital_By_Id', (req, res) => {
     let result = controller.delete_Hospital_By_Id(req)
     res.status(result.status).send(result.message)
 })
