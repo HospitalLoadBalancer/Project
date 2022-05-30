@@ -1,12 +1,13 @@
 <h1 mat-dialog-title>Hospital added successfully</h1>
 <h2 mat-dialog-title>Hospital:</h2>
 <div mat-dialog-content>
-    <strong>name:</strong>{{data.name}}
-    <strong>address:</strong>{{data.address}}
-    <strong>number_of_beds:</strong>{{data.number_of_beds}}
-    <strong>occupation:</strong>{{data.occupation}}
-    <strong>lat:</strong>{{data.lat}}
-    <strong>lng:</strong>{{data.lng}}
+    <strong>id:</strong>{{data.id}} <br>
+    <strong>name:</strong>{{data.name}} <br>
+    <strong>address:</strong>{{data.address}} <br>
+    <strong>number_of_beds:</strong>{{data.number_of_beds}} <br>
+    <strong>occupation:</strong>{{data.occupation}} <br>
+    <strong>lat:</strong>{{data.location.lat}} <br>
+    <strong>lng:</strong>{{data.location.lng}}
 </div>
 <div mat-dialog-actions>
     <button mat-button mat-dialog-close>Close</button>

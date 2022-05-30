@@ -1,49 +1,54 @@
 <mat-expansion-panel hideToggle>
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        Add Hospital
-      </mat-panel-title>
-      <mat-panel-description>
-        Add hospital to registry
-        <mat-icon>add_circle</mat-icon>
-      </mat-panel-description>
-    </mat-expansion-panel-header>
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Add Hospital
+    </mat-panel-title>
+    <mat-panel-description>
+      Add hospital to registry
+      <mat-icon>add_circle</mat-icon>
+    </mat-panel-description>
+  </mat-expansion-panel-header>
 
-    <form (ngSubmit)="onSubmit(hospitalForm)" #hospitalForm="ngForm">
+  <form (ngSubmit)="onSubmit(hospitalForm)" #hospitalForm="ngForm">
 
-    <mat-form-field appearance="fill">
-      <mat-label>Name</mat-label>
-      <input matInput type="text" ngModel name="name" required>
-    </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Id</mat-label>
+    <input matInput type="number" ngModel name="id" required>
+  </mat-form-field>
 
-    <mat-form-field appearance="fill">
-      <mat-label>Address</mat-label>
-      <input matInput type="text" ngModel name="address" required>
-    </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Name</mat-label>
+    <input matInput type="text" ngModel name="name" required>
+  </mat-form-field>
 
-    <mat-form-field appearance="fill">
-      <mat-label>Number of beds</mat-label>
-      <input matInput type="number" ngModel name="number_of_beds" required #beds>
-    </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Address</mat-label>
+    <input matInput type="text" ngModel name="address" required>
+  </mat-form-field>
 
-    <mat-form-field appearance="fill">
-      <mat-label>Occupation</mat-label>
-      <input matInput type="number" ngModel name="occupation" max={{beds.value}} required>
-      <mat-error>Occupation must be less or equal number of beds</mat-error>
-    </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Number of beds</mat-label>
+    <input matInput type="number" ngModel name="number_of_beds" required #beds>
+  </mat-form-field>
 
-    <mat-form-field appearance="fill" >
-      <mat-label>Lat</mat-label>
-      <input matInput type="number" ngModel name="lat" required> 
-    </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Occupation</mat-label>
+    <input matInput type="number" ngModel name="occupation" max={{beds.value}} required>
+    <mat-error>Occupation must be less or equal number of beds</mat-error>
+  </mat-form-field>
 
-    <mat-form-field appearance="fill">
-      <mat-label>Lng</mat-label>
-      <input matInput type="number" ngModel name="lng" required>
-    </mat-form-field>
+  <mat-form-field appearance="fill" >
+    <mat-label>Lat</mat-label>
+    <input matInput type="number" ngModel name="lat" required> 
+  </mat-form-field>
 
-    <mat-action-row>
-      <button mat-raised-button color="primary" type="submit">Submit</button>
-    </mat-action-row>
-  </form>
-  </mat-expansion-panel>
+  <mat-form-field appearance="fill">
+    <mat-label>Lng</mat-label>
+    <input matInput type="number" ngModel name="lng" required>
+  </mat-form-field>
+
+  <mat-action-row>
+    <button mat-raised-button color="primary" type="submit">Submit</button>
+  </mat-action-row>
+</form>
+</mat-expansion-panel>

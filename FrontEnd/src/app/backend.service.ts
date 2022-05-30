@@ -1,7 +1,6 @@
-import { Host, Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
-import { catchError, retry } from 'rxjs/operators';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 
 
@@ -23,6 +22,7 @@ export class BackendService {
   get_All_HospitalsURL = this.localHost+'get_All_Hospitals'
   get_Hospital_By_IdURL = this.localHost+'get_Hospital_By_Id?id='
   delete_Hospital_By_IdURL = this.localHost+'delete_Hospital_By_Id?id='
+  add_HospitalURL = this.localHost+'add_Hospital'
 
   constructor(private http: HttpClient) { }
 
@@ -36,5 +36,9 @@ export class BackendService {
 
   delete_Hospital_By_Id(id:string){
     return this.http.delete(this.delete_Hospital_By_IdURL+id)
+  }
+
+  add_Hospital(hospital: Hospital){
+    return this.http.post<Hospital>(this.add_HospitalURL, hospital)
   }
 }
