@@ -16,14 +16,14 @@ export class AddHospitalButtonComponent implements OnInit {
     if (form.invalid) return
 
     let hospital: Hospital = {
-      id: form.value.id,
+      id: form.value.id+'',
       name: form.value.name,
       address: form.value.address,
-      number_of_beds: form.value.number_of_beds,
-      occupation: form.value.occupation,
+      number_of_beds: form.value.number_of_beds+'',
+      occupation: form.value.occupation+'',
       location: {
-          lat: form.value.lat,
-          lng: form.value.lng
+          lat: form.value.lat+'',
+          lng: form.value.lng+''
         }
     }
 

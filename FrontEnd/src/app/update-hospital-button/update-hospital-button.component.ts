@@ -1,18 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
+import { BackendService, Hospital } from '../backend.service';
 import { UpdateHospitalButtonDialogComponent } from './update-hospital-button-dialog/update-hospital-button-dialog.component';
-
-
-export interface HospitalData {
-  id: string
-  name: string
-  address: string
-  number_of_beds: string
-  occupation: string
-  lat: string
-  lng: string
-}
 
 @Component({
   selector: 'update-hospital-button',
@@ -20,23 +10,30 @@ export interface HospitalData {
   styleUrls: ['./update-hospital-button.component.css']
 })
 export class UpdateHospitalButtonComponent implements OnInit {
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog, private backEnd: BackendService) { }
 
   onSubmit(form: NgForm): void {
     if (form.invalid) return
-    this.dialog.open(UpdateHospitalButtonDialogComponent, {
-      data: {
-        id: form.value.id,
-        name: form.value.name,
-        address: form.value.address,
-        number_of_beds: form.value.number_of_beds,
-        occupation: form.value.occupation,
-        lat: form.value.lat,
-        lng: form.value.lng,
-      }
-    });
-    form.resetForm()
-    form.reset()
+
+    let hospital: Hospital = {
+      id: form.value.id+'',
+      name: form.value.name,
+      address: form.value.address,
+      number_of_beds: form.value.number_of_beds+'',
+      occupation: form.value.occupation+'',
+      location: {
+          lat: form.value.lat+'',
+          lng: form.value.lng+''
+        }
+    }
+
+    this.backEnd.update_Hospital(hospital).subscribe(() => {
+      this.dialog.open(UpdateHospitalButtonDialogComponent, {
+        data: {...hospital}
+      });
+      form.resetForm()
+      form.reset()
+    })
   }
 
   ngOnInit(): void {

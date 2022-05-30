@@ -17,7 +17,6 @@ export class DeleteHospitalButtonComponent implements OnInit {
   constructor(public dialog: MatDialog, private backEnd: BackendService) { }
 
   onSubmit(form: NgForm): void {
-
     if (form.invalid) return
     this.backEnd.delete_Hospital_By_Id(form.value.id).subscribe(() => {
       this.dialog.open(DeleteHospitalButtonDialogComponent, {

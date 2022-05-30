@@ -1,5 +1,5 @@
 import { LiveAnnouncer } from '@angular/cdk/a11y';
-import { Component, ViewChild} from '@angular/core';
+import { Component, Injectable, ViewChild} from '@angular/core';
 import {MatSort, Sort} from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { BackendService, Hospital } from '../backend.service';
@@ -14,19 +14,22 @@ import { BackendService, Hospital } from '../backend.service';
 })
 export class HospitalTableComponent{
   displayedColumns = ['id', "name", 'address', 'number_of_beds', 'occupation', 'lat', 'lng'];
-  hospitals: Hospital[] = []
-  dataSource = new MatTableDataSource(this.hospitals);
+  dataSource = new MatTableDataSource<Hospital>();
 
   constructor(private _liveAnnouncer: LiveAnnouncer, private backEnd: BackendService) {}
 
   @ViewChild(MatSort)
     sort!: MatSort;
 
+  getHospitals(){
+      this.backEnd.get_All_Hospitals().subscribe((data: Hospital[]) => {
+      this.dataSource = new MatTableDataSource(data);
+      this.dataSource.sort = this.sort;
+      }) 
+  }
+
   ngAfterViewInit() {
-    this.backEnd.get_All_Hospitals().subscribe((data: Hospital[]) => {
-        this.dataSource = new MatTableDataSource(data);
-        this.dataSource.sort = this.sort;
-    }) 
+    this.getHospitals()
   }
 
   announceSortChange(sortState: Sort) {

@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import { HospitalData } from '../update-hospital-button.component';
+import { Hospital } from 'src/app/backend.service';
 
 @Component({
   selector: 'app-update-hospital-button-dialog',
@@ -11,7 +11,7 @@ export class UpdateHospitalButtonDialogComponent implements OnInit {
 
   constructor(
     public dialogRef: MatDialogRef<UpdateHospitalButtonDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: HospitalData,
+    @Inject(MAT_DIALOG_DATA) public data: Hospital,
   ) {}
 
   onNoClick(): void {
