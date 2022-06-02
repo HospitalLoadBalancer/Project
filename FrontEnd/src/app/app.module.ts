@@ -3,10 +3,10 @@ import { NgModule } from '@angular/core';
 
 //declarations
 import { AppComponent } from './app.component';
-import { ButtonsMenuComponent } from './buttons-menu/buttons-menu.component';
-import { HospitalTableComponent } from './hospital-table/hospital-table.component';
-import { AddHospitalButtonComponent } from './add-hospital-button/add-hospital-button.component';
-import { UpdateHospitalButtonComponent } from './update-hospital-button/update-hospital-button.component';
+import { ButtonsMenuComponent } from './hospitals/hospital-buttons-menu/buttons-menu.component';
+import { HospitalTableComponent } from './hospitals/hospital-table/hospital-table.component';
+import { AddHospitalButtonComponent } from './hospitals/hospital-add-button/add-hospital-button.component';
+import { UpdateHospitalButtonComponent } from './hospitals/hospital-update-button/update-hospital-button.component';
 
 //imports
 import { AppRoutingModule } from './app-routing.module';
@@ -22,12 +22,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { FormsModule } from '@angular/forms';
-import { AddHospitalButtonDialogComponent } from './add-hospital-button/add-hospital-button-dialog/add-hospital-button-dialog.component';
-import { UpdateHospitalButtonDialogComponent } from './update-hospital-button/update-hospital-button-dialog/update-hospital-button-dialog.component';
-import { DeleteHospitalButtonComponent } from './delete-hospital-button/delete-hospital-button.component';
-import { DeleteHospitalButtonDialogComponent } from './delete-hospital-button/delete-hospital-button-dialog/delete-hospital-button-dialog.component';
-import { GetHospitalButtonComponent } from './get-hospital-button/get-hospital-button.component';
-import { GetHospitalButtonDialogComponent } from './get-hospital-button/get-hospital-button-dialog/get-hospital-button-dialog.component';
+import { AddHospitalButtonDialogComponent } from './hospitals/hospital-add-button/add-hospital-button-dialog/add-hospital-button-dialog.component';
+import { UpdateHospitalButtonDialogComponent } from './hospitals/hospital-update-button/update-hospital-button-dialog/update-hospital-button-dialog.component';
+import { DeleteHospitalButtonComponent } from './hospitals/hospital-delete-button/delete-hospital-button.component';
+import { DeleteHospitalButtonDialogComponent } from './hospitals/hospital-delete-button/delete-hospital-button-dialog/delete-hospital-button-dialog.component';
+import { GetHospitalButtonComponent } from './hospitals/hospital-get-button/get-hospital-button.component';
+import { GetHospitalButtonDialogComponent } from './hospitals/hospital-get-button/get-hospital-button-dialog/get-hospital-button-dialog.component';
 
 
 

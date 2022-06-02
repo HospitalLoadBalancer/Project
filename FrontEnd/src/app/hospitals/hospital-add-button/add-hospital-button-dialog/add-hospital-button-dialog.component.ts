@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { Hospital } from 'src/app/Hospitals/hospital.model';
+import { Hospital } from 'src/app/hospitals/hospital.model';
 
 @Component({
   selector: 'app-add-hospital-button-dialog',
