@@ -15,8 +15,14 @@ export class AddHospitalButtonComponent implements OnInit {
 
   onSubmit(form: NgForm): void {
     if (form.invalid) return
+    let hospital = this.createHospitalFromForm(form)
+    this.backEnd.add_Hospital(hospital).subscribe(() => {
+      this.addProcedure(hospital, form)
+    })
+  }
 
-    let hospital: Hospital = {
+  createHospitalFromForm(form: NgForm): Hospital{
+    return {
       id: form.value.id+'',
       name: form.value.name,
       address: form.value.address,
@@ -27,14 +33,15 @@ export class AddHospitalButtonComponent implements OnInit {
           lng: form.value.lng+''
         }
     }
+  }
 
-    this.backEnd.add_Hospital(hospital).subscribe(() => {
-      this.dialog.open(AddHospitalButtonDialogComponent, {
-        data: {...hospital}
-      });
-      form.resetForm()
-      form.reset()
-    })
+  addProcedure(hospital: Hospital, form: NgForm){
+    this.dialog.open(AddHospitalButtonDialogComponent, {
+      data: hospital
+    });
+    form.resetForm()
+    form.reset()
+    this.backEnd.getHospitalsChangedNotice().next("Hospital added")
   }
 
   ngOnInit(): void {
