@@ -7,12 +7,13 @@ import { Hospital } from '../../hospital.model';
   providedIn: 'root'
 })
 export class HospitalHttpRequests {
-  private localHost = 'http://localhost:4000/'
-  private get_All_HospitalsURL = this.localHost+'get_All_Hospitals'
-  private get_Hospital_By_IdURL = this.localHost+'get_Hospital_By_Id?id='
-  private delete_Hospital_By_IdURL = this.localHost+'delete_Hospital_By_Id?id='
-  private add_HospitalURL = this.localHost+'add_Hospital'
-  private update_HospitalURL = this.localHost+'update_Hospital'
+  private localHostPort = 4000
+  private localHost = `http://localhost:${this.localHostPort}/`
+  private get_All_HospitalsURL = `${this.localHost}get_All_Hospitals`
+  private get_Hospital_By_IdURL = `${this.localHost}get_Hospital_By_Id`
+  private delete_Hospital_By_IdURL = `${this.localHost}delete_Hospital_By_Id` 
+  private add_HospitalURL = `${this.localHost}add_Hospital` 
+  private update_HospitalURL = `${this.localHost}update_Hospital`
   private hospitalsChangedNotice = new Subject<string>();
 
   constructor(private http: HttpClient) { }
@@ -26,11 +27,11 @@ export class HospitalHttpRequests {
   }
 
   get_Hospital_By_Id(id:string){
-    return this.http.get<Hospital>(this.get_Hospital_By_IdURL+id)
+    return this.http.get<Hospital>(`${this.get_Hospital_By_IdURL}?id=${id}`)
   }
 
   delete_Hospital_By_Id(id:string){
-    return this.http.delete(this.delete_Hospital_By_IdURL+id, { responseType: 'text'})
+    return this.http.delete(`${this.delete_Hospital_By_IdURL}?id=${id}`, { responseType: 'text'})
   }
 
   add_Hospital(hospital: Hospital) {
