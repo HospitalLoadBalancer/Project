@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { HospitalHttpRequests } from '../hospital-services/hospital-http-requests/hospital-http-requests.service';
@@ -10,21 +10,22 @@ import { GetHospitalButtonDialogComponent } from './get-hospital-button-dialog/g
   templateUrl: './get-hospital-button.component.html',
   styleUrls: ['./get-hospital-button.component.css']
 })
-export class GetHospitalButtonComponent implements OnInit {
+export class GetHospitalButtonComponent{
   constructor(public dialog: MatDialog, public backEnd:HospitalHttpRequests) { }
 
   onSubmit(form: NgForm): void {
     if (form.invalid) return
+    
     this.backEnd.get_Hospital_By_Id(form.value.id).subscribe((data: Hospital) => {
-      this.dialog.open(GetHospitalButtonDialogComponent, {
-        data: {...data}
-      });
-      form.resetForm()
-      form.reset()
+      this.getHospitalProcedure(data, form)
     })
   }
 
-  ngOnInit(): void {
+  getHospitalProcedure(hospital: Hospital, form: NgForm){
+    this.dialog.open(GetHospitalButtonDialogComponent, {
+      data: hospital
+    });
+    form.resetForm()
+    form.reset()
   }
-
 }

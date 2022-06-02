@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { HospitalHttpRequests} from '../hospital-services/hospital-http-requests/hospital-http-requests.service';
