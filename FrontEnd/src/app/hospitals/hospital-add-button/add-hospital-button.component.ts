@@ -21,7 +21,7 @@ export class AddHospitalButtonComponent implements OnInit {
     })
   }
 
-  createHospitalFromForm(form: NgForm): Hospital{
+  private createHospitalFromForm(form: NgForm): Hospital{
     return {
       id: form.value.id+'',
       name: form.value.name,
@@ -35,7 +35,7 @@ export class AddHospitalButtonComponent implements OnInit {
     }
   }
 
-  addProcedure(hospital: Hospital, form: NgForm){
+  private addProcedure(hospital: Hospital, form: NgForm){
     this.dialog.open(AddHospitalButtonDialogComponent, {
       data: hospital
     });

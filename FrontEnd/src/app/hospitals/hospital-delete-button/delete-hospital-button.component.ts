@@ -23,14 +23,14 @@ export class DeleteHospitalButtonComponent{
     })
   }
 
-  deleteProcedure(form: NgForm){
+  private deleteProcedure(form: NgForm){
     this.showDeleteDialog(form.value.id)
     form.resetForm()
     form.reset()
     this.backEnd.getHospitalsChangedNotice().next("Hospital deleted")
   }
 
-  showDeleteDialog(hospitalId: number){
+  private showDeleteDialog(hospitalId: number){
     this.dialog.open(DeleteHospitalButtonDialogComponent, {
       data:{
         id: hospitalId
