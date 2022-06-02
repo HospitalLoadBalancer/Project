@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
-import { HospitalHttpRequests } from '../hospital-services/hospital-http-requests/hospital-http-requests.service';
+import { HospitalBackEnd } from '../hospital-services/hospital-http-requests/hospital-backEnd.service';
 import { DeleteHospitalButtonDialogComponent } from './delete-hospital-button-dialog/delete-hospital-button-dialog.component';
 
 export interface HospitalData{
@@ -14,7 +14,7 @@ export interface HospitalData{
   styleUrls: ['./delete-hospital-button.component.css']
 })
 export class DeleteHospitalButtonComponent{
-  constructor(public dialog: MatDialog, private backEnd: HospitalHttpRequests) { }
+  constructor(public dialog: MatDialog, private backEnd: HospitalBackEnd) { }
 
   onSubmit(form: NgForm): void {
     if (form.invalid) return

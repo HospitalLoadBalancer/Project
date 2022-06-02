@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { HospitalHttpRequests } from './hospital-http-requests.service';
+import { HospitalBackEnd } from './hospital-backEnd.service';
 
 describe('BackendService', () => {
-  let service: HospitalHttpRequests;
+  let service: HospitalBackEnd;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(HospitalHttpRequests);
+    service = TestBed.inject(HospitalBackEnd);
   });
 
   it('should be created', () => {

@@ -2,7 +2,7 @@ import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { Component, ViewChild} from '@angular/core';
 import {MatSort, Sort} from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { HospitalHttpRequests } from '../hospital-services/hospital-http-requests/hospital-http-requests.service';
+import { HospitalBackEnd } from '../hospital-services/hospital-http-requests/hospital-backEnd.service';
 import { Hospital } from '../hospital.model';
 
 /**
@@ -16,7 +16,7 @@ import { Hospital } from '../hospital.model';
 export class HospitalTableComponent{
   displayedColumns = ['id', "name", 'address', 'number_of_beds', 'occupation', 'lat', 'lng'];
   dataSource = new MatTableDataSource<Hospital>();
-  constructor(private _liveAnnouncer: LiveAnnouncer, private backEnd: HospitalHttpRequests) {}
+  constructor(private _liveAnnouncer: LiveAnnouncer, private backEnd: HospitalBackEnd) {}
 
   @ViewChild(MatSort)
     sort!: MatSort;

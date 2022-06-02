@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
-import { HospitalHttpRequests } from '../hospital-services/hospital-http-requests/hospital-http-requests.service';
+import { HospitalBackEnd } from '../hospital-services/hospital-http-requests/hospital-backEnd.service';
 import { Hospital } from '../hospital.model';
 import { AddHospitalButtonDialogComponent } from './add-hospital-button-dialog/add-hospital-button-dialog.component';
 
@@ -11,11 +11,11 @@ import { AddHospitalButtonDialogComponent } from './add-hospital-button-dialog/a
   styleUrls: ['./add-hospital-button.component.css']
 })
 export class AddHospitalButtonComponent{
-  constructor(public dialog: MatDialog, private backEnd: HospitalHttpRequests) { }
+  constructor(public dialog: MatDialog, private backEnd: HospitalBackEnd) { }
 
   onSubmit(form: NgForm): void {
     if (form.invalid) return
-    
+
     let hospital = this.createHospitalFromForm(form)
     this.backEnd.add_Hospital(hospital).subscribe(() => {
       this.addProcedure(hospital, form)

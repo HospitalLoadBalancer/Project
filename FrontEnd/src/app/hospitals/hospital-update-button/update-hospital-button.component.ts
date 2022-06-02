@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
-import { HospitalHttpRequests} from '../hospital-services/hospital-http-requests/hospital-http-requests.service';
+import { HospitalBackEnd} from '../hospital-services/hospital-http-requests/hospital-backEnd.service';
 import { Hospital } from '../hospital.model';
 import { UpdateHospitalButtonDialogComponent } from './update-hospital-button-dialog/update-hospital-button-dialog.component';
 
@@ -11,7 +11,7 @@ import { UpdateHospitalButtonDialogComponent } from './update-hospital-button-di
   styleUrls: ['./update-hospital-button.component.css']
 })
 export class UpdateHospitalButtonComponent {
-  constructor(public dialog: MatDialog, private backEnd: HospitalHttpRequests) { }
+  constructor(public dialog: MatDialog, private backEnd: HospitalBackEnd) { }
 
   onSubmit(form: NgForm): void {
     if (form.invalid) return

@@ -6,7 +6,7 @@ import { Hospital } from '../../hospital.model';
 @Injectable({
   providedIn: 'root'
 })
-export class HospitalHttpRequests {
+export class HospitalBackEnd {
   private localHostPort = 4000
   private localHost = `http://localhost:${this.localHostPort}/`
   private get_All_HospitalsURL = `${this.localHost}get_All_Hospitals`
