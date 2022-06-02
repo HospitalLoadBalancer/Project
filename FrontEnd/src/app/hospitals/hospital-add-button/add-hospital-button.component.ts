@@ -10,11 +10,12 @@ import { AddHospitalButtonDialogComponent } from './add-hospital-button-dialog/a
   templateUrl: './add-hospital-button.component.html',
   styleUrls: ['./add-hospital-button.component.css']
 })
-export class AddHospitalButtonComponent implements OnInit {
+export class AddHospitalButtonComponent{
   constructor(public dialog: MatDialog, private backEnd: HospitalHttpRequests) { }
 
   onSubmit(form: NgForm): void {
     if (form.invalid) return
+    
     let hospital = this.createHospitalFromForm(form)
     this.backEnd.add_Hospital(hospital).subscribe(() => {
       this.addProcedure(hospital, form)
@@ -43,8 +44,4 @@ export class AddHospitalButtonComponent implements OnInit {
     form.reset()
     this.backEnd.getHospitalsChangedNotice().next("Hospital added")
   }
-
-  ngOnInit(): void {
-  }
-
 }

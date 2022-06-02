@@ -10,13 +10,20 @@ import { UpdateHospitalButtonDialogComponent } from './update-hospital-button-di
   templateUrl: './update-hospital-button.component.html',
   styleUrls: ['./update-hospital-button.component.css']
 })
-export class UpdateHospitalButtonComponent implements OnInit {
+export class UpdateHospitalButtonComponent {
   constructor(public dialog: MatDialog, private backEnd: HospitalHttpRequests) { }
 
   onSubmit(form: NgForm): void {
     if (form.invalid) return
 
-    let hospital: Hospital = {
+    let hospital = this.createHospitalFromForm(form)
+    this.backEnd.update_Hospital(hospital).subscribe(() => {
+        this.updateProcedure(hospital, form)
+    })
+  }
+
+  private createHospitalFromForm(form: NgForm): Hospital{
+    return {
       id: form.value.id+'',
       name: form.value.name,
       address: form.value.address,
@@ -27,17 +34,14 @@ export class UpdateHospitalButtonComponent implements OnInit {
           lng: form.value.lng+''
         }
     }
-
-    this.backEnd.update_Hospital(hospital).subscribe(() => {
-      this.dialog.open(UpdateHospitalButtonDialogComponent, {
-        data: {...hospital}
-      });
-      form.resetForm()
-      form.reset()
-    })
   }
 
-  ngOnInit(): void {
+  private updateProcedure(hospital: Hospital, form: NgForm){
+    this.dialog.open(UpdateHospitalButtonDialogComponent, {
+      data: hospital
+    });
+    form.resetForm()
+    form.reset()
+    this.backEnd.getHospitalsChangedNotice().next("Hospital updated")
   }
-
 }
