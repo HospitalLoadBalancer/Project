@@ -2,7 +2,8 @@ import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { Component, Injectable, ViewChild} from '@angular/core';
 import {MatSort, Sort} from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { BackendService, Hospital } from '../backend.service';
+import { BackendService } from '../backend.service';
+import { Hospital } from '../Hospitals/hospital.model';
 
 /**
  * @title Table with sticky header

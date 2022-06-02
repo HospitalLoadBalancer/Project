@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
-import { BackendService, Hospital } from '../backend.service';
+import { BackendService } from '../backend.service';
+import { Hospital } from '../Hospitals/hospital.model';
 import { GetHospitalButtonDialogComponent } from './get-hospital-button-dialog/get-hospital-button-dialog.component';
 
 @Component({
