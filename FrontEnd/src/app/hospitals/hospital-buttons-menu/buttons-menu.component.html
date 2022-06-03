@@ -1,9 +1,14 @@
 <div class="example-headers-align">
-<mat-accordion>
-    <add-hospital-button></add-hospital-button>
-    <update-hospital-button></update-hospital-button>
-    <delete-hospital-button></delete-hospital-button>
-    <get-hospital-button></get-hospital-button>
+  <button mat-icon-button [matMenuTriggerFor]="menu" role="alert">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu" >
+  <mat-accordion>
+    <add-hospital-button (click)="$event.stopPropagation()"></add-hospital-button>
+    <update-hospital-button (click)="$event.stopPropagation()"></update-hospital-button>
+    <delete-hospital-button (click)="$event.stopPropagation()"></delete-hospital-button>
+    <get-hospital-button (click)="$event.stopPropagation()"></get-hospital-button>
   </mat-accordion>
+</mat-menu>
 </div>
   
