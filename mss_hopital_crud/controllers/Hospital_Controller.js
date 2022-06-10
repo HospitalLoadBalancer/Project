@@ -26,9 +26,9 @@ class Hospital_Controller {
         }
     }
 
-    get_All_Hospitals() {
+    async get_All_Hospitals() {
         try {
-            let res = this.hospital_Use_Cases.get_All_Hospitals()
+            let res = await this.hospital_Use_Cases.get_All_Hospitals()
             return {
                 status: 200,
                 message: res
@@ -42,10 +42,10 @@ class Hospital_Controller {
         }
     }
 
-    get_Hospital_By_Id(req) {
+    async get_Hospital_By_Id(req) {
         try {
             let id = req.query.id
-            let res = this.hospital_Use_Cases.get_Hospital_By_Id(id);
+            let res = await this.hospital_Use_Cases.get_Hospital_By_Id(id);
             return {
                 status: 200,
                 message: res

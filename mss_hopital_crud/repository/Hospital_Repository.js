@@ -1,31 +1,28 @@
-const { Hospital } = require('../models/Hospital.js')
+const MongoDB = require('../Database/MongoDB')
+const databaseUri = "mongodb+srv://HospitalRepository:HospitalRepository@hospitalrepository.ikpza.mongodb.net/?retryWrites=true&w=majority"
 
 class Hospital_Repository {
-    // Explicit attributes
-    hospitals       // List of registered hospitals
+    database
     
     constructor() {
-        this.hospitals = HOSPITALS
+        this.database = new MongoDB(databaseUri)
     }
 
     add_Hospital(hospital) {
-        this.hospitals.push(hospital)
+        this.database.add_Hospital(hospital)
+        //this.hospitals.push(hospital)
     }
-    get_All_Hospitals() {
-        return this.hospitals
+    async get_All_Hospitals() {
+        return await this.database.get_All_Hospitals()
     }
-    get_All_Hospitals_Json(){
-        // Implementar
-    }
-    get_Hospital_By_Id(id) {
-        return this.hospitals.find(hospital => hospital.id === id)
+    async get_Hospital_By_Id(id) {
+        return await this.database.get_Hospital_By_Id(id)
     }
     update_Hospital(hospital) {
-        let index = this.hospitals.findIndex(h => h.id === hospital.id)
-        this.hospitals[index] = hospital
+        this.database.update_Hospital(hospital)
     }
     delete_Hospital_By_Id(id) {
-        this.hospitals = this.hospitals.filter(hospital => hospital.id !== id)
+        this.database.delete_Hospital_By_Id(id)
     }
 }
 

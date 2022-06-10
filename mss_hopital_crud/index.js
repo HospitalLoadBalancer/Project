@@ -26,14 +26,14 @@ app.post('/add_Hospital', (req, res) => {
 })
 
 //http://localhost:XXXX/get_All_Hospitals
-app.get('/get_All_Hospitals', (req, res) => {
-    let result = controller.get_All_Hospitals()
+app.get('/get_All_Hospitals', async (req, res) => {
+    let result = await controller.get_All_Hospitals()
     res.status(result.status).send(result.message)
 })
 
 //http://localhost:XXXX/get_Hospital_By_Id?id=X
-app.get('/get_Hospital_By_Id', (req, res) => {
-    let result = controller.get_Hospital_By_Id(req)
+app.get('/get_Hospital_By_Id', async (req, res) => {
+    let result = await controller.get_Hospital_By_Id(req)
     res.status(result.status).json(result.message)
 })
 
