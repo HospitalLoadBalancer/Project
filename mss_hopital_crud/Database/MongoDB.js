@@ -27,7 +27,7 @@ class MongoDB {
     this.add_Hospital(hospital)
   }
   delete_Hospital_By_Id(id) {
-    HospitalSchema.deleteOne({id: id}).then()
+    HospitalSchema.deleteMany({id: id}).then()
   }
 }
 

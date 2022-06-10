@@ -5,6 +5,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { HospitalBackEnd } from '../hospital-services/hospital-http-requests/hospital-backEnd.service';
 import { Hospital } from '../hospital.model';
 
+
 /**
  * @title Table with sticky header
  */
