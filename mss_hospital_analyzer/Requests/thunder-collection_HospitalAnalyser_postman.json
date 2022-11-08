@@ -1,0 +1,1 @@
+{"info":{"name":"HospitalAnalyser","schema":"https://schema.getpostman.com/json/collection/v2.1.0/collection.json"},"item":[{"name":"get_Emptiest_Hospital","request":{"method":"GET","url":{"raw":"http://localhost:5000/get_Emptiest_Hospital","protocol":"http","host":["localhost:5000"],"path":["get_Emptiest_Hospital"],"port":"5000"}}}]}
