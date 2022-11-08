@@ -1,7 +1,7 @@
 class Location{
     // Explicit attributes
-    latitude        // User latitude
-    longitude       // User longitude
+    lat        // User latitude
+    lng       // User longitude
     address         // User address
 
     constructor(obj){
@@ -10,8 +10,8 @@ class Location{
 
     toJsObject(){
         return {
-            latitude: this.name,
-            longitude: this.longitude,
+            lat: this.lat,
+            lng: this.lng,
             address: this.address
         }
     }

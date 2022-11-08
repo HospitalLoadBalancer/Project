@@ -1,4 +1,3 @@
-const { Location } = require('../models/Location.js')
 const axios = require('axios')
 
 // Class to fetch hospital crud data
