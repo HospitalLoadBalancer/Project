@@ -1,21 +1,22 @@
 const { Analyser_Use_Cases } = require('../use_cases/Analyser_Use_Cases')
 
 class Analyser_Controller{
-    aNALYSER_uSE_cASES
+    analyser_Use_Cases
 
     constructor(fetcher){
-        this.aNALYSER_uSE_cASES = new Analyser_Use_Cases(fetcher)
+        this.analyser_Use_Cases = new Analyser_Use_Cases(fetcher)
     }
+
     get_Emptiest_Hospital(){
         try{
-            let res = this.aNALYSER_uSE_cASES.get_Emptiest_Hospital()
+            let res = this.analyser_Use_Cases.get_Emptiest_Hospital()
             return {
                 status: 200,
                 message: res
             }
         }
         catch(err){
-            return{
+            return {
                 status: 500,
                 message: err
             }
