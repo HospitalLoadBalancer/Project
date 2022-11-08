@@ -104,7 +104,18 @@ HOSPITALS = [
         "address": "06290 Schumm Station",
         "number_of_beds": "725",
         "occupation": "749"
-    }
+    },
+    {
+        "id": "25",
+        "name": "Rice LLC",
+        "location": {
+            "lat": "-19.8876",
+            "lng": "125.6946"
+        },
+        "address": "57279 Gulgowski Islands",
+        "number_of_beds": "245",
+        "occupation": "220"
+    },
 ]
 
 module.exports = {
