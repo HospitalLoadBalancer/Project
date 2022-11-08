@@ -12,9 +12,10 @@ const controller = new Analyser_Controller(fetcher)
 // Endpoints
 
 //http://localhost:XXXX/get_Emptiest_Hospital
-app.get('/get_Emptiest_Hospital', (req, res) => {
-    let result = controller.get_Emptiest_Hospital()
-    res.status(result.status).send(result.message)
+app.get('/get_Emptiest_Hospital', async (req, res) => {
+    let result = await controller.get_Emptiest_Hospital()
+    console.log(result.message)
+    res.status(result.status).send({message: result.message})
 })
 
 //http://localhost:XXXX/closest_Hospital

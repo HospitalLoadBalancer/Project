@@ -14,9 +14,10 @@ class Fetcher{
         let res = await axios.get(`${this.base_url}/${request_route}`)
         return res.data
     }
-    post_request(request_route, body){
-        return axios.post(`${this.base_url}/${request_route}`, body)
-    }
+
+    // post_request(request_route, body){
+    //     return axios.post(`${this.base_url}/${request_route}`, body)
+    // }
 }
 
 module.exports = {
