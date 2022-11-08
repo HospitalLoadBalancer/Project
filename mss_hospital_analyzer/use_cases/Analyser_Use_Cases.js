@@ -5,7 +5,7 @@ class Analyser_Use_Cases{
         this.fetcher = fetcher
     }
 
-    async get_Emptiest_Hospital(){
+    async get_Emptiest_Hospitals(){
         let hospitals = await this.fetcher.get_request('get_All_Hospitals')
         let minor_occupation = Math.min(...hospitals.map( hospital => hospital.occupation ))
         return hospitals.filter( hospital => hospital.occupation === minor_occupation+'' )

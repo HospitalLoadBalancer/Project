@@ -7,9 +7,9 @@ class Analyser_Controller{
         this.analyser_Use_Cases = new Analyser_Use_Cases(fetcher)
     }
 
-    async get_Emptiest_Hospital(){
+    async get_Emptiest_Hospitals(){
         try{
-            let res = await this.analyser_Use_Cases.get_Emptiest_Hospital()
+            let res = await this.analyser_Use_Cases.get_Emptiest_Hospitals()
             return {
                 status: 200,
                 message: res
