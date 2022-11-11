@@ -1,19 +1,12 @@
-class Analyser_Use_Cases{
-    fetcher
-
-    constructor(fetcher){
-        this.fetcher = fetcher
-    }
+class Analyser_Use_Cases{  
 
     async get_Emptiest_Hospitals(){
-        let hospitals = await this.fetcher.get_request('get_All_Hospitals')
-        let minor_occupation = Math.min(...hospitals.map( hospital => hospital.occupation ))
-        return hospitals.filter( hospital => hospital.occupation === minor_occupation+'' )
+        let minor_occupation = Math.min(...this.hospitals.map( hospital => hospital.occupation ))
+        return this.hospitals.filter( hospital => hospital.occupation === minor_occupation+'' )
     }
 
     async get_closest_Hospitals(location){
-        let hospitals = await this.fetcher.get_request('get_All_Hospitals')
-        hospitals = hospitals.map ( hospital => {
+        const hospitals = this.hospitals.map ( hospital => {
             hospital.distance = this.#calculateHospitalDistance(hospital.location, location)
             return hospital
         })

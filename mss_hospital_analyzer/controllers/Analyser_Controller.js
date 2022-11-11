@@ -3,8 +3,24 @@ const { Analyser_Use_Cases } = require('../use_cases/Analyser_Use_Cases')
 class Analyser_Controller{
     analyser_Use_Cases
 
-    constructor(fetcher){
-        this.analyser_Use_Cases = new Analyser_Use_Cases(fetcher)
+    constructor(){
+        this.analyser_Use_Cases = new Analyser_Use_Cases()
+    }
+
+    handle_event(req){
+         try{
+            let res = await this.analyser_Use_Cases.handle_event(req.body)
+            return {
+                status: 200,
+                message: res
+            }
+        }
+        catch(err){
+            return {
+                status: 500,
+                message: err
+            }
+        }
     }
 
     async get_Emptiest_Hospitals(){

@@ -44,4 +44,15 @@ app.post('/closest_Hospitals', async (req, res) => {
 //     res.status(result.status).json(result.message)
 // })
 
-app.listen(5000, () => console.log("5000 port initiated!"))
+app.post('/eventos', (req, res) => {
+    controller.handle_event(req)
+    res.status(200).send()
+})
+
+app.listen(5000, async () => {
+    console.log("5000 port initiated!")
+    const response = await axios.get('http://localhost:10000/eventos')
+    for(let event in response.data){
+        
+    }
+})
