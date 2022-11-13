@@ -9,7 +9,7 @@ class MongoDB {
 
   connectDatabase(uri) {
     mongoose.connect(uri)
-      .then(() => { console.log('Conexão OK') })
+      .then(() => { console.log('Conexão MongoDB OK') })
       .catch((e) => { console.log('Erro de conexão: ' + e) })
   }
 

@@ -8,7 +8,7 @@ class Hospital_Repository {
     database
     
     constructor() {
-        this.database = new MongoDBMock() //new MongoDB(databaseUri)
+        this.database = new MongoDB(databaseUri) //new MongoDBMock() 
     }
 
     add_Hospital(hospital) {

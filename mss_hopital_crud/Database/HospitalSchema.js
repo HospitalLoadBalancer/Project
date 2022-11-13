@@ -2,7 +2,7 @@
 const mongoose = require('mongoose')
 
 // definindo o schema
-const hospitalSchema= mongoose.Schema({
+const hospitalSchema = mongoose.Schema({
     id: {type:String, required:true},
     name: {type:String, required:true},
     location: {lat: {type:String, required:true},

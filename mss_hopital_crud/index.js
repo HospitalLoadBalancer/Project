@@ -3,7 +3,6 @@ const cors = require('cors')
 const axios = require ('axios')
 const { Hospital_Repository } = require('./repository/Hospital_Repository.js')
 const { Hospital_Controller } = require('./controllers/Hospital_Controller.js')
-const { urlBarramento } = require('./envVariables/envVariables.js')
 
 const app = express()
 app.use(express.json(), cors())
@@ -24,18 +23,21 @@ const controller = new Hospital_Controller(repository)
 */
 app.post('/add_Hospital', (req, res) => {
     let result = controller.add_Hospital(req)
+    console.log('/add_Hospital: Result '+ result.status)
     res.status(result.status).send(result.message)
 })
 
 //http://localhost:XXXX/get_All_Hospitals
 app.get('/get_All_Hospitals', async (req, res) => {
     let result = await controller.get_All_Hospitals()
+    console.log('/get_All_Hospitals: Result '+ result.status)
     res.status(result.status).send(result.message)
 })
 
 //http://localhost:XXXX/get_Hospital_By_Id?id=X
 app.get('/get_Hospital_By_Id', async (req, res) => {
     let result = await controller.get_Hospital_By_Id(req)
+    console.log('/get_Hospital_By_Id: Result '+ result.status)
     res.status(result.status).json(result.message)
 })
 
@@ -52,12 +54,14 @@ app.get('/get_Hospital_By_Id', async (req, res) => {
  */
 app.post('/update_Hospital', (req, res) => {
     let result = controller.update_Hospital(req)
+    console.log('/update_Hospital: Result '+ result.status)
     res.status(result.status).send(result.message)
 })
 
 //http://localhost:XXXX/delete_Hospital_By_Id?id=X
 app.delete('/delete_Hospital_By_Id', (req, res) => {
     let result = controller.delete_Hospital_By_Id(req)
+    console.log('/delete_Hospital_By_Id: Result '+ result.status)
     res.status(result.status).send(result.message)
 })
 

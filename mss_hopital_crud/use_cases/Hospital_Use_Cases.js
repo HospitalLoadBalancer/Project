@@ -23,7 +23,7 @@ class Hospital_Use_Cases {
     }
     delete_Hospital_By_Id(id) {
         this.hospital_Repository.delete_Hospital_By_Id(id)
-        axios.post(urlBarramento, {name: 'hospitalDeleted', data: hospital})
+        axios.post(urlBarramento, {name: 'hospitalDeleted', data: id})
     }
 }
 

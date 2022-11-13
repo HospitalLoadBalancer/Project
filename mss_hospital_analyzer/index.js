@@ -45,7 +45,7 @@ app.post('/setLocation', (req, res) => {
 })
 
 app.post('/eventos', (req, res) => {
-    controller.handle_event(req)
+    let result = controller.handle_event(req)
     console.log('/eventos: Result '+ result.status)
     res.status(result.status).json(result.message)
 })
