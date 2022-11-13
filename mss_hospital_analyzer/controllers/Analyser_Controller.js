@@ -9,7 +9,23 @@ class Analyser_Controller{
 
     handle_event(req){
          try{
-            let res = await this.analyser_Use_Cases.handle_event(req.body)
+            let res = this.analyser_Use_Cases.handle_event(req.body)
+            return {
+                status: 200,
+                message: res
+            }
+        }
+        catch(err){
+            return {
+                status: 500,
+                message: err
+            }
+        }
+    }
+
+    set_location(req){
+        try{
+            let res = this.analyser_Use_Cases.set_location(req.body)
             return {
                 status: 200,
                 message: res
