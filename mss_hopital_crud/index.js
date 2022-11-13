@@ -1,7 +1,9 @@
 const express = require('express')
 const cors = require('cors')
+const axios = require ('axios')
 const { Hospital_Repository } = require('./repository/Hospital_Repository.js')
 const { Hospital_Controller } = require('./controllers/Hospital_Controller.js')
+const { urlBarramento } = require('./envVariables/envVariables.js')
 
 const app = express()
 app.use(express.json(), cors())
@@ -60,4 +62,6 @@ app.delete('/delete_Hospital_By_Id', (req, res) => {
 })
 
 
-app.listen(4000, () => console.log("4000 port initiated!"))
+app.listen(4000, () => {
+    console.log("4000 port initiated!")
+})

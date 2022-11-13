@@ -18,7 +18,7 @@ class Analyser_Controller{
         catch(err){
             return {
                 status: 500,
-                message: err
+                message: err.message
             }
         }
     }
@@ -34,7 +34,7 @@ class Analyser_Controller{
         catch(err){
             return {
                 status: 500,
-                message: err
+                message: err.message
             }
         }
     }
@@ -50,7 +50,7 @@ class Analyser_Controller{
         catch(err){
             return {
                 status: 500,
-                message: err
+                message: err.message
             }
         }
     }
@@ -66,7 +66,7 @@ class Analyser_Controller{
         catch(err){
             return {
                 status: 500,
-                message: err
+                message: err.message
             }
         }
     }
