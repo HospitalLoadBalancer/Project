@@ -5,7 +5,7 @@ import Search from './components/Search'
 
 export default function App(){
     return(
-        <div>
+        <div className="align-items-center m-2">
             <Functionalities></Functionalities>
             <Search></Search>
         </div>

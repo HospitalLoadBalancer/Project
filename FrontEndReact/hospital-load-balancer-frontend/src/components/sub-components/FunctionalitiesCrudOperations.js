@@ -1,4 +1,6 @@
 import React from "react"
+import 'bootstrap/dist/css/bootstrap.min.css'
+
 import FunctionalitiesAddHospital from "./FunctionalitiesCrudOperations/FunctionalitiesAddHospital"
 import FunctionalitiesDeleteHospital from "./FunctionalitiesCrudOperations/FunctionalitiesDeleteHospital"
 import FunctionalitiesGetHospital from "./FunctionalitiesCrudOperations/FunctionalitiesGetHospital"
