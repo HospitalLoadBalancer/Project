@@ -5,7 +5,7 @@ export default class FunctionalitiesGetHospital extends React.Component{
 	render(){
 		return(
 			<div>
-				FunctionalitiesGetHospital component
+				<button className="btn btn-outline-primary w-100 mt-2">GetHospital</button>
 			</div>
 		)
 	}

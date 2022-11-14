@@ -5,7 +5,7 @@ export default class FunctionalitiesGetClosestAndEmptiestHospital extends React.
 	render(){
 		return(
 			<div>
-				FunctionalitiesGetClosestAndEmptiestHospital component
+				<button className="btn btn-outline-primary w-100 mt-2">GetClosestAndEmptiestHospital</button>
 			</div>
 		)
 	}

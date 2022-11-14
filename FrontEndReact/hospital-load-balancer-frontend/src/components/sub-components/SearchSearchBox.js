@@ -6,6 +6,7 @@ export default class SearchSearchBox extends React.Component{
 		return(
 			<div>
 				SearchSearchBox component
+				<input className="form-control" type="text" placeholder="Filter Hospitals"/>
 			</div>
 		)
 	}
