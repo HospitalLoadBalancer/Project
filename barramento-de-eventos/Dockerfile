@@ -1,18 +1,19 @@
-#comentários são feitos com #
-#desde que # seja o primeiro símbolo na linha
-#essa linguagem não é case sensitive
-#mas é boa prática usar maiúsculas para diferenciar comandos e argumentos
-#queremos uma imagem com o node versão 14
-FROM node:14
-# um diretório no sistema de arquivos do contêiner para os comandos a seguir
-WORKDIR /app
-#copiamos o package.json para poder executar npm install
-COPY package.json .
-#executamos npm install
+FROM node:16
+
+# Create app directory
+WORKDIR /usr/src/app
+
+# Install app dependencies
+# A wildcard is used to ensure both package.json AND package-lock.json are copied
+# where available (npm@5+)
+COPY package*.json ./
+
 RUN npm install
-#copiamos os demais arquivos
+# If you are building your code for production
+# RUN npm ci --only=production
+
+# Bundle app source
 COPY . .
-#tornamos o contêiner disponível na porta 5200
+
 EXPOSE 10000
-#colocamos o aplicativo em execução
-CMD ["node", "index.js"]
+CMD [ "npm", "start" ]

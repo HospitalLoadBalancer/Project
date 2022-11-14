@@ -52,7 +52,8 @@ app.post('/eventos', (req, res) => {
 
 app.listen(5000, async () => {
     console.log("5000 port initiated!")
-    const response = await axios.get('http://localhost:10000/eventos')
+    const response = await axios.get('http://be-service:10000/eventos')
+                                    http://be-service:10000/eventos
     for(let event of response.data){
         handle_event(event)
     }

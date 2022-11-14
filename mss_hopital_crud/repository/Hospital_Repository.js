@@ -1,14 +1,12 @@
 const MongoDB = require('../Database/MongoDB')
-const { MongoDBMock } = require('../Database/MongoDBMock')
-const password = "EAwB9QE0uLorscDs"
-const user = "HospitalRepository"
-const databaseUri = `mongodb+srv://${user}:${password}@cluster0.r7gaavt.mongodb.net/?retryWrites=true&w=majority`
+const  URL_MONGODB  = "mongodb+srv://HospitalRepository:EAwB9QE0uLorscDs@cluster0.r7gaavt.mongodb.net/?retryWrites=true&w=majority"
+//const { MongoDBMock } = require('../Database/MongoDBMock')
 
 class Hospital_Repository {
     database
     
     constructor() {
-        this.database = new MongoDB(databaseUri) //new MongoDBMock() 
+        this.database = new MongoDB(URL_MONGODB) //new MongoDBMock() 
     }
 
     add_Hospital(hospital) {

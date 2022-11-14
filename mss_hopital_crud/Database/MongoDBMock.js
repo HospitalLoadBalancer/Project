@@ -1,11 +1,11 @@
 const axios = require('axios');
-const { urlBarramento } = require('../envVariables/envVariables');
+const URL_BARRAMENTO  = "//be-service:10000/eventos"
 
 //Mongo mock class to make tests
 class MongoDBMock {
     constructor(){
         this.hospitals = HOSPITALS
-        axios.post(urlBarramento, {name: 'UsingMockedDB', data: this.hospitals})
+        axios.post(URL_BARRAMENTO, {name: 'UsingMockedDB', data: this.hospitals})
     }
 
     get_All_Hospitals() {
