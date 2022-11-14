@@ -8,8 +8,15 @@ export default class Functionalities extends React.Component{
     render(){
         return(
             <div className="align-items-center border rounded mb-2">
-                <FunctionalitiesCrudOperations></FunctionalitiesCrudOperations>
-                <FunctionalitiesSpecialOperations></FunctionalitiesSpecialOperations>
+                <h3>Functionalities</h3>
+                <div className="align-items-center border rounded mb-2">
+                    <h4>Crud Operations</h4>
+                    <FunctionalitiesCrudOperations></FunctionalitiesCrudOperations>
+                </div>
+                <div className="align-items-center border rounded mb-2">
+                    <h4>Special Operations</h4>
+                    <FunctionalitiesSpecialOperations></FunctionalitiesSpecialOperations>
+                </div>
             </div>
         )
     }

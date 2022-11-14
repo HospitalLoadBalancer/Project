@@ -8,6 +8,7 @@ export default class Search extends React.Component{
     render(){
         return(
             <div className="align-items-center border rounded mb-2">
+                <h3>Search</h3>
                 <SearchSearchBox></SearchSearchBox>
                 <SearchResultTable></SearchResultTable>
             </div>
