@@ -26,10 +26,10 @@ app.get('/closest_Hospitals', async (req, res) => {
 })
 
 //http://localhost:XXXX/closest_And_Emptiest_Hospitals
-// app.get('/closest_And_Emptiest_Hospitals', (req, res) => {
-//     let result = controller.closest_And_Emptiest_Hospital(req)
-//     res.status(result.status).json(result.message)
-// })
+app.get('/closest_And_Emptiest_Hospitals', (req, res) => {
+    let result = controller.get_closest_And_Emptiest_Hospital(req)
+    res.status(result.status).json(result.message)
+})
 
 //http://localhost:XXXX/setLocation
 /*
@@ -53,7 +53,7 @@ app.post('/eventos', (req, res) => {
 app.listen(5000, async () => {
     console.log("5000 port initiated!")
     const response = await axios.get('http://be-service:10000/eventos')
-                                    http://be-service:10000/eventos
+    .catch(error => console.log("Error: "+error))
     for(let event of response.data){
         handle_event(event)
     }

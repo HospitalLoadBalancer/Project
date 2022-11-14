@@ -14,7 +14,7 @@ spec:
         spec:
             containers:
                 - name: mss-hospital-analyzer
-                  image: mss_hospital_analyzer
+                  image: mss-hospital-analyzer
                   imagePullPolicy: IfNotPresent
                   ports:
                   - containerPort: 5000

@@ -1,6 +1,7 @@
 const MongoDB = require('../Database/MongoDB')
-const  URL_MONGODB  = "mongodb+srv://HospitalRepository:EAwB9QE0uLorscDs@cluster0.r7gaavt.mongodb.net/?retryWrites=true&w=majority"
+const { URL_MONGODB } = require('../GlobalVariables')
 //const { MongoDBMock } = require('../Database/MongoDBMock')
+
 
 class Hospital_Repository {
     database

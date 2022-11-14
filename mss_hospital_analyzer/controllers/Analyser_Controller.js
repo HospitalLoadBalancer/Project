@@ -70,6 +70,10 @@ class Analyser_Controller{
             }
         }
     }
+
+    async get_closest_And_Emptiest_Hospital(){
+
+    }
 }
 
 module.exports = {

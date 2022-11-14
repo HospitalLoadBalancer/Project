@@ -10,7 +10,7 @@ class MongoDB {
   connectDatabase(uri) {
     mongoose.connect(uri)
       .then(() => { console.log('Conexão MongoDB OK') })
-      .catch((e) => { console.log('Erro de conexão: ' + e) })
+      .catch((e) => { console.log('Erro de conexão MongoDB: ' + e) })
   }
 
   add_Hospital(hospital) {

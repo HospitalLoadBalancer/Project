@@ -1,5 +1,6 @@
 const axios = require('axios');
-const  URL_BARRAMENTO  = "http://be-service:10000/eventos"
+const { sendEvent } = require('../EventHandler/EventHandler');
+const { URL_BARRAMENTO } = require('../GlobalVariables');
 
 class Hospital_Use_Cases {
     hospital_Repository
@@ -7,9 +8,10 @@ class Hospital_Use_Cases {
     constructor(hospital_Repository) {
         this.hospital_Repository = hospital_Repository
     }
+
     add_Hospital(hospital) {
         this.hospital_Repository.add_Hospital(hospital)
-        axios.post(URL_BARRAMENTO, {name: 'hospitalAdded', data: hospital})
+        sendEvent({name: 'hospitalAdded', data: hospital})
     }
     get_All_Hospitals() {
         return this.hospital_Repository.get_All_Hospitals()
@@ -19,11 +21,11 @@ class Hospital_Use_Cases {
     }
     update_Hospital(hospital) {
         this.hospital_Repository.update_Hospital(hospital)
-        axios.post(URL_BARRAMENTO, {name: 'hospitalUpdated', data: hospital})
+        sendEvent({name: 'hospitalUpdated', data: hospital})
     }
     delete_Hospital_By_Id(id) {
         this.hospital_Repository.delete_Hospital_By_Id(id)
-        axios.post(URL_BARRAMENTO, {name: 'hospitalDeleted', data: id})
+        sendEvent({name: 'hospitalDeleted', data: id})
     }
 }
 

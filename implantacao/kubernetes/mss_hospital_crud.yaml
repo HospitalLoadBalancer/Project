@@ -14,7 +14,7 @@ spec:
         spec:
             containers:
                 - name: mss-hospital-crud
-                  image: mss_hospital_crud
+                  image: mss-hospital-crud
                   imagePullPolicy: IfNotPresent
                   ports:
                   - containerPort: 4000

@@ -3,6 +3,7 @@ const cors = require('cors')
 const axios = require ('axios')
 const { Hospital_Repository } = require('./repository/Hospital_Repository.js')
 const { Hospital_Controller } = require('./controllers/Hospital_Controller.js')
+const { sendEvent } = require('./EventHandler/EventHandler.js')
 
 const app = express()
 app.use(express.json(), cors())
@@ -66,6 +67,11 @@ app.delete('/delete_Hospital_By_Id', (req, res) => {
 })
 
 
-app.listen(4000, () => {
+app.listen(4000, async () => {
     console.log("4000 port initiated!")
+    sendEvent(
+    {
+        name: 'mssCRUDInitiated',
+        data: await controller.get_All_Hospitals()
+    })
 })

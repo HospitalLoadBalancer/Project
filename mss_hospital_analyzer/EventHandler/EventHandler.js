@@ -5,7 +5,7 @@ const eventsHandlers = {
     hospitalAdded: hospital => DataBase.add_Hospital(hospital),
     hospitalDeleted: id => DataBase.delete_Hospital_By_Id(id),
     hospitalUpdated: hospital => DataBase.update_Hospital(hospital),
-    UsingMockedDB: hospitals => DataBase.hospitals = hospitals
+    mssCRUDInitiated: hospitals => DataBase.hospitals = hospitals
 }
 
 const handle_event = event => {
