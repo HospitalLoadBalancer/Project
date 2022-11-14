@@ -17,20 +17,30 @@ class Analyser_Use_Cases{
         return `Location changed! lat: ${location.lat} lng: ${location.lng}`
     }
 
-    async get_Emptiest_Hospitals(){
-        let minor_occupation = Math.min(...DataBase.hospitals.map( hospital => hospital.occupation ))
-        return DataBase.hospitals.filter( hospital => hospital.occupation === minor_occupation+'' )
+    get_closest_And_Emptiest_Hospital(){
+        let hospitals = this.get_Emptiest_Hospitals()
+        return this.get_closest_Hospitals(hospitals)
     }
 
-    async get_closest_Hospitals(){
+    get_Emptiest_Hospitals(margin = 50){
+        let minor_occupation = Math.min(...DataBase.hospitals.map( hospital => hospital.occupation ))
+        return DataBase.hospitals.filter( hospital => +hospital.occupation <= (minor_occupation + margin) )
+    }
+
+    get_closest_Hospitals(hospitals = DataBase.hospitals, margin = 200){
         if(!this.location.lat || !this.location.lng)
             throw new Error('There is no location defined!')
-        const hospitals = DataBase.hospitals.map ( hospital => {
+        const hospitalsDistance = this.#calculateHospitalsDistance(hospitals)
+        let minor_distance = Math.min(...hospitalsDistance.map( hospital => hospital.distance))
+        return hospitals.filter( hospital => hospital.distance <= (minor_distance + margin))
+    }
+
+    #calculateHospitalsDistance(hospitals){
+        const hospitalsDistance = hospitals.map ( hospital => {
             hospital.distance = this.#calculateHospitalDistance(hospital.location)
             return hospital
         })
-        let minor_distance = Math.min(...hospitals.map( hospital => hospital.distance))
-        return hospitals.filter( hospital => hospital.distance === minor_distance )
+        return hospitalsDistance
     }
 
     #calculateHospitalDistance(HLocation){
@@ -40,10 +50,6 @@ class Analyser_Use_Cases{
         let y0 = +this.location.lng
         return Math.sqrt( Math.pow((x - x0), 2) + Math.pow((y - y0), 2) )
     }
-
-    // closest_And_Emptiest_Hospital(){
-
-    // }
 }
 
 module.exports = {

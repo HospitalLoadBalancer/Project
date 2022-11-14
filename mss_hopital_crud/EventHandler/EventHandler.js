@@ -1,5 +1,5 @@
 const { URL_BARRAMENTO } = require("../GlobalVariables")
-
+const axios = require ('axios')
 
 
 const sendEvent =  event => 

@@ -39,9 +39,9 @@ class Analyser_Controller{
         }
     }
 
-    async get_Emptiest_Hospitals(){
+    get_Emptiest_Hospitals(){
         try{
-            let res = await this.analyser_Use_Cases.get_Emptiest_Hospitals()
+            let res = this.analyser_Use_Cases.get_Emptiest_Hospitals()
             return {
                 status: 200,
                 message: res
@@ -55,9 +55,9 @@ class Analyser_Controller{
         }
     }
 
-    async get_closest_Hospitals(req){
+    get_closest_Hospitals(){
         try{
-            let res = await this.analyser_Use_Cases.get_closest_Hospitals(req.body)
+            let res = this.analyser_Use_Cases.get_closest_Hospitals()
             return {
                 status: 200,
                 message: res
@@ -71,8 +71,20 @@ class Analyser_Controller{
         }
     }
 
-    async get_closest_And_Emptiest_Hospital(){
-
+    get_closest_And_Emptiest_Hospital(){
+        try{
+            let res = this.analyser_Use_Cases.get_closest_And_Emptiest_Hospital()
+            return {
+                status: 200,
+                message: res
+            }
+        }
+        catch(err){
+            return {
+                status: 500,
+                message: err.message
+            }
+        }
     }
 }
 

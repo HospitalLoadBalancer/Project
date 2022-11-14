@@ -1,6 +1,5 @@
 const express = require('express')
 const cors = require('cors')
-const axios = require ('axios')
 const { Hospital_Repository } = require('./repository/Hospital_Repository.js')
 const { Hospital_Controller } = require('./controllers/Hospital_Controller.js')
 const { sendEvent } = require('./EventHandler/EventHandler.js')
@@ -72,6 +71,6 @@ app.listen(4000, async () => {
     sendEvent(
     {
         name: 'mssCRUDInitiated',
-        data: await controller.get_All_Hospitals()
+        data: (await controller.get_All_Hospitals()).message
     })
 })
