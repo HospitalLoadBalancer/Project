@@ -1,13 +1,13 @@
 const MongoDB = require('../Database/MongoDB')
-const { URL_MONGODB } = require('../GlobalVariables')
-//const { MongoDBMock } = require('../Database/MongoDBMock')
+//const { URL_MONGODB } = require('../GlobalVariables')
+const { MongoDBMock } = require('../Database/MongoDBMock')
 
 
 class Hospital_Repository {
     database
     
     constructor() {
-        this.database = new MongoDB(URL_MONGODB) //new MongoDBMock()
+        this.database = new MongoDBMock() // new MongoDB(URL_MONGODB)
     }
 
     add_Hospital(hospital) {
