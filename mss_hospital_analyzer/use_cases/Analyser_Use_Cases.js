@@ -27,7 +27,7 @@ class Analyser_Use_Cases{
         return DataBase.hospitals.filter( hospital => +hospital.occupation <= (minor_occupation + margin) )
     }
 
-    get_closest_Hospitals(hospitals = DataBase.hospitals, margin = 200){
+    get_closest_Hospitals(hospitals = DataBase.hospitals, margin = 0){
         if(!this.location.lat || !this.location.lng)
             throw new Error('There is no location defined!')
         const hospitalsDistance = this.#calculateHospitalsDistance(hospitals)
