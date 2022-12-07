@@ -2,10 +2,11 @@ const express = require('express')
 const { Analyser_Controller } = require('./controllers/Analyser_Controller')
 const { handle_event } = require('./EventHandler/EventHandler.js')
 const axios = require('axios')
+const cors = require('cors')
 const { URL_BARRAMENTO } = require('./GlobalVariables')
 
 const app = express()
-app.use(express.json())
+app.use(express.json(), cors())
 
 // Create variables
 const controller = new Analyser_Controller()
