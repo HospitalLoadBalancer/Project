@@ -1,8 +1,11 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import FormComponent from "../FormComponent";
+import axios from 'axios';
 
 const FunctionalitiesAddHospital = () => {
+	const baseUrl = "http://localhost:30100/add_Hospital"
+
 	let formInputs = [
 		"id", "name", "lat", "lng", "address", "number_of_beds", "occupation"
 	]
@@ -18,7 +21,10 @@ const FunctionalitiesAddHospital = () => {
 				occupation : formData.occupation
 		}
 		console.log(body)
-		// request
+		
+		axios.post(baseUrl, body)
+		.then(res => alert(JSON.stringify(res.data)))
+		.catch(err => alert(JSON.stringify(err)))
 	};
 
 	const extractFormData = (event) => {
