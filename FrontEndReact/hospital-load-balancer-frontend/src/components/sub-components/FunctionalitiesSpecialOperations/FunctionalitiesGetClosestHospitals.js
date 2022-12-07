@@ -1,12 +1,22 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css'
+import axios from "axios";
 
-export default class FunctionalitiesGetClosestHospitals extends React.Component{
-	render(){
-		return(
-			<div>
-				<button className="btn btn-outline-primary w-100 mt-2">GetClosestHospitals</button>
-			</div>
-		)
-	}
+const FunctionalitiesGetClosestHospitals = () => {
+
+	const baseUrl = "http://localhost:30000/closest_Hospitals"
+
+	const handleSubmit = event => {
+		axios.get(baseUrl)
+		.then(res => alert(JSON.stringify(res.data)))
+		.catch(err => alert(JSON.stringify(err)))
+	};
+
+	return (
+		<div>
+			<button className="btn btn-outline-primary w-100 mt-2" onClick={handleSubmit} type='submit'>Get Closest hospital</button>
+		</div>
+	)
 }
+
+export default FunctionalitiesGetClosestHospitals
