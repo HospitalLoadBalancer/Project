@@ -9,6 +9,8 @@ docker build --rm -t mss-hospital-analyzer .
 echo "Deploying kubernetes application"
 cd ../implantacao/kubernetes
 kubectl apply -f barramento-de-eventos.yaml
+SET SLEEPTIME=5
+TIMEOUT /T %SLEEPTIME%
 kubectl apply -f mss-hospital-analyzer.yaml
 kubectl apply -f mss-hospital-crud.yaml
 
