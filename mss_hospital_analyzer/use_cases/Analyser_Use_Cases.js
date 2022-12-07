@@ -22,12 +22,12 @@ class Analyser_Use_Cases{
         return this.get_closest_Hospitals(hospitals)
     }
 
-    get_Emptiest_Hospitals(margin = 50){
+    get_Emptiest_Hospitals(margin = 20){
         let minor_occupation = Math.min(...DataBase.hospitals.map( hospital => hospital.occupation ))
         return DataBase.hospitals.filter( hospital => +hospital.occupation <= (minor_occupation + margin) )
     }
 
-    get_closest_Hospitals(hospitals = DataBase.hospitals, margin = 0){
+    get_closest_Hospitals(hospitals = DataBase.hospitals, margin = 10){
         if(!this.location.lat || !this.location.lng)
             throw new Error('There is no location defined!')
         const hospitalsDistance = this.#calculateHospitalsDistance(hospitals)
