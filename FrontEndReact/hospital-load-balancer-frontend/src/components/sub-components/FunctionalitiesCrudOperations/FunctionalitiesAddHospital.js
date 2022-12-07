@@ -1,7 +1,7 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css'
-import FormComponent from "../FormComponent";
 import axios from 'axios';
+import FormComponent from "../FormComponent";
 
 const FunctionalitiesAddHospital = () => {
 	const baseUrl = "http://localhost:30100/add_Hospital"
@@ -38,7 +38,7 @@ const FunctionalitiesAddHospital = () => {
 
 	return (
 		<div>
-			<h1>AddHospital</h1>
+			<h1>Add Hospital</h1>
 			<FormComponent
 				formInput={formInputs}
 				formSubmit={handleSubmit}
