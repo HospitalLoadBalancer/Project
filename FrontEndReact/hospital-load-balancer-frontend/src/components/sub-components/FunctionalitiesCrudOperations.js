@@ -3,7 +3,8 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 import FunctionalitiesAddHospital from "./FunctionalitiesCrudOperations/FunctionalitiesAddHospital"
 import FunctionalitiesDeleteHospital from "./FunctionalitiesCrudOperations/FunctionalitiesDeleteHospital"
-import FunctionalitiesGetHospital from "./FunctionalitiesCrudOperations/FunctionalitiesGetHospital"
+import FunctionalitiesGetAllHospital from "./FunctionalitiesCrudOperations/FunctionalitiesGetAllHospital"
+import FunctionalitiesGetHospitalById from "./FunctionalitiesCrudOperations/FunctionalitiesGetHospitalById"
 import FunctionalitiesUpdateHospital from "./FunctionalitiesCrudOperations/FunctionalitiesUpdateHospital"
 
 
@@ -13,7 +14,8 @@ export default class FunctionalitiesCrudOperations extends React.Component{
             <div>
                 <FunctionalitiesAddHospital></FunctionalitiesAddHospital>
                 <FunctionalitiesDeleteHospital></FunctionalitiesDeleteHospital>
-                <FunctionalitiesGetHospital></FunctionalitiesGetHospital>
+                <FunctionalitiesGetAllHospital></FunctionalitiesGetAllHospital>
+                <FunctionalitiesGetHospitalById></FunctionalitiesGetHospitalById>
                 <FunctionalitiesUpdateHospital></FunctionalitiesUpdateHospital>
             </div>
         )
