@@ -13,7 +13,8 @@ const FunctionalitiesGetEmptiestHospitals = () => {
 	};
 
 	return (
-		<div>
+		<div className="border border-primary m-4 p-2 rounded">
+			<h4 className="text-center">Get Emptiest hospital</h4>
 			<button className="btn btn-outline-primary w-100 mt-2" onClick={handleSubmit} type='submit'>Get Emptiest hospital</button>
 		</div>
 	)

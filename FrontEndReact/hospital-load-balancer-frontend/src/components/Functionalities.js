@@ -7,14 +7,15 @@ import FunctionalitiesSpecialOperations from "./sub-components/FunctionalitiesSp
 export default class Functionalities extends React.Component{
     render(){
         return(
-            <div className="align-items-center border rounded mb-2">
-                <h3>Functionalities</h3>
-                <div className="align-items-center border rounded mb-2">
-                    <h4>Crud Operations</h4>
+            <div className="align-items-center border border-primary rounded mb-2 p-2">
+                <h1 className="font-weight-bold">Hospital Load Balancer (React Version)</h1>
+                <br />
+                <div className="align-items-center border border-secondary rounded mb-2 p-2">
+                    <h3 className="font-weight-light text-center">CRUD Operations</h3>
                     <FunctionalitiesCrudOperations></FunctionalitiesCrudOperations>
                 </div>
-                <div className="align-items-center border rounded mb-2">
-                    <h4>Special Operations</h4>
+                <div className="align-items-center border border-secondary rounded mb-2 p-2">
+                    <h3 className="font-weight-light text-center">Special Operations</h3>
                     <FunctionalitiesSpecialOperations></FunctionalitiesSpecialOperations>
                 </div>
             </div>

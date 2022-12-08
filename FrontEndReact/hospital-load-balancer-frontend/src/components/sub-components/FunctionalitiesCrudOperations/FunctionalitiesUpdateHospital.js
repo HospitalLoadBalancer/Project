@@ -37,8 +37,8 @@ const FunctionalitiesUpdateHospital = () => {
 	};
 
 	return (
-		<div>
-			<h1>Update Hospital</h1>
+		<div className="border border-primary m-4 p-2 rounded">
+			<h4 className="text-center">Update Hospital</h4>
 			<FormComponent
 				formInput={formInputs}
 				formSubmit={handleSubmit}

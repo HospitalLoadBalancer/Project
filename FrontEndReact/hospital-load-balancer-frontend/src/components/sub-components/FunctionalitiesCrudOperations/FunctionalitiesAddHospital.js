@@ -37,8 +37,8 @@ const FunctionalitiesAddHospital = () => {
 	};
 
 	return (
-		<div>
-			<h1>Add Hospital</h1>
+		<div className="border border-primary m-4 p-2 rounded">
+			<h4 className="text-center">Add Hospital</h4>
 			<FormComponent
 				formInput={formInputs}
 				formSubmit={handleSubmit}

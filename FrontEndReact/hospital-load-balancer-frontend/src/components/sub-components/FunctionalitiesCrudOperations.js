@@ -13,10 +13,10 @@ export default class FunctionalitiesCrudOperations extends React.Component{
         return(
             <div>
                 <FunctionalitiesAddHospital></FunctionalitiesAddHospital>
-                <FunctionalitiesDeleteHospital></FunctionalitiesDeleteHospital>
-                <FunctionalitiesGetAllHospital></FunctionalitiesGetAllHospital>
-                <FunctionalitiesGetHospitalById></FunctionalitiesGetHospitalById>
                 <FunctionalitiesUpdateHospital></FunctionalitiesUpdateHospital>
+                <FunctionalitiesDeleteHospital></FunctionalitiesDeleteHospital>
+                <FunctionalitiesGetHospitalById></FunctionalitiesGetHospitalById>
+                <FunctionalitiesGetAllHospital></FunctionalitiesGetAllHospital>
             </div>
         )
     }

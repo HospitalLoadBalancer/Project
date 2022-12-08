@@ -12,7 +12,8 @@ const FunctionalitiesGetAllHospital = () => {
 	};
 
 	return (
-		<div>
+		<div className="border border-primary m-4 p-2 rounded">
+			<h4 className="text-center">Get All Hospitals</h4>
 			<button className="btn btn-outline-primary w-100 mt-2" onClick={handleSubmit} type='submit'>Get All Hospitals</button>
 		</div>
 	)

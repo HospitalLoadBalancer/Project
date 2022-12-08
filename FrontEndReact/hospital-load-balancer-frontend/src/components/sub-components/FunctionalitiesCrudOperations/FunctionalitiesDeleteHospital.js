@@ -29,8 +29,8 @@ const FunctionalitiesDeleteHospital = () => {
 	};
 
 	return (
-		<div>
-			<h1>Delete Hospital by id</h1>
+		<div className="border border-primary m-4 p-2 rounded">
+			<h4 className="text-center">Delete Hospital by id</h4>
 			<FormComponent
 				formInput={formInputs}
 				formSubmit={handleSubmit}
