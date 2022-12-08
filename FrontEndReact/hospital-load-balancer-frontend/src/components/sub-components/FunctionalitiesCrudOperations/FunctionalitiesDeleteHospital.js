@@ -6,7 +6,6 @@ import FormComponent from "../FormComponent";
 const FunctionalitiesDeleteHospital = () => {
 	
 	const baseUrl = "http://localhost:30100/delete_Hospital_By_Id"
-
 	let formInputs = [
 		"id"
 	]

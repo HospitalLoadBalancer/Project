@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
+import HospitalDataTable from '../HospitalDataTable';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import axios from 'axios'
-import HospitalDataTable from '../HospitalDataTable';
 
 const FunctionalitiesGetAllHospital = () => {
+
 	const baseUrl = "http://localhost:30100/get_All_Hospitals"
 	const [hospitals, setHospitals] = useState([]);
 

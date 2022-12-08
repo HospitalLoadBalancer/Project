@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import HospitalDataTable from '../HospitalDataTable';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import axios from 'axios'
 import FormComponent from "../FormComponent";
-import HospitalDataTable from '../HospitalDataTable';
 
 const FunctionalitiesGetHospitalById = () => {
+
 	const baseUrl = "http://localhost:30100/get_Hospital_By_Id"
 	const [hospitals, setHospitals] = useState([]);
 

@@ -4,8 +4,8 @@ import axios from 'axios'
 import FormComponent from "../FormComponent";
 
 const FunctionalitiesUpdateHospital = () => {
-	const baseUrl = "http://localhost:30100/update_Hospital"
 
+	const baseUrl = "http://localhost:30100/update_Hospital"
 	let formInputs = [
 		"id", "name", "lat", "lng", "address", "number_of_beds", "occupation"
 	]
