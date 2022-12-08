@@ -5,7 +5,6 @@ import HospitalDataTable from '../HospitalDataTable';
 
 const FunctionalitiesGetAllHospital = () => {
 	const baseUrl = "http://localhost:30100/get_All_Hospitals"
-
 	const [hospitals, setHospitals] = useState([]);
 
 	const handleSubmit = () => {
