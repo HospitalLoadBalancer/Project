@@ -14,4 +14,6 @@ TIMEOUT /T %SLEEPTIME%
 kubectl apply -f mss-hospital-analyzer.yaml
 kubectl apply -f mss-hospital-crud.yaml
 
-cd ../../
+echo "Starting front-end"
+cd ../../FrontEndReact/hospital-load-balancer-frontend
+npm start
