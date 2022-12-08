@@ -14,7 +14,7 @@ const FunctionalitiesGetHospitalById = () => {
 		let formData = extractFormData(event)
 		
 		axios.get(`${baseUrl}?id=${formData.id}`)
-		.then(res => alert(JSON.stringify(res.data)))
+		.then(res => alert(JSON.stringify(res.data, undefined, 10)))
 		.catch(err => alert(JSON.stringify(err)))
 	};
 
