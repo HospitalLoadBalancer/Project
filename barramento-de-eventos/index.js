@@ -25,14 +25,12 @@ app.post(mssResource, (req, res) => {
 
     requestCounter += 1
     console.log(`Requests recebidas: ${requestCounter}`)
-    
-    const initalTime = new Date().getTime()
+    console.log(`\nEvento recebido: ${JSON.stringify(evento)}\n`)
+
     for (let i = 0; i < mssPorts.length; i++){
             axios.post(`http://${mssIPs[i]}:${mssPorts[i]}${mssResource}`, evento)
-            .catch(err => console.log(`${new Date().getTime()}: ${err}`))
+            .catch(err => console.log(err.message))
     }
-    console.log(`Tempo de resposta do broadcast: ${new Date().getTime() - initalTime}ms`)
-    console.log(`Aguardando novas solicitações...`)
 
     res.status(200).send({ msg: "ok"});
 });
