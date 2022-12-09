@@ -11,8 +11,8 @@ cd ../implantacao/kubernetes
 kubectl apply -f barramento-de-eventos.yaml
 SET SLEEPTIME=5
 TIMEOUT /T %SLEEPTIME%
-kubectl apply -f mss-hospital-analyzer.yaml
 kubectl apply -f mss-hospital-crud.yaml
+kubectl apply -f mss-hospital-analyzer.yaml
 
 echo "Starting front-end"
 cd ../../FrontEndReact/hospital-load-balancer-frontend
