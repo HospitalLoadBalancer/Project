@@ -5,7 +5,11 @@ const eventsHandlers = {
     hospitalAdded: hospital => DataBase.add_Hospital(hospital),
     hospitalDeleted: id => DataBase.delete_Hospital_By_Id(id),
     hospitalUpdated: hospital => DataBase.update_Hospital(hospital),
-    mssCRUDInitiated: hospitals => { return DataBase.hospitals = hospitals }
+    mssCRUDInitiated: hospitals => {
+        hospitals.forEach(hospital => {
+           DataBase.add_Hospital(hospital) 
+        });
+    }
 }
 
 const handle_event = event => {
